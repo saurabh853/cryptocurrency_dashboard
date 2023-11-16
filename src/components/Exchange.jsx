@@ -5,8 +5,8 @@ import { fetchCoinExchangeRateList } from "../Redux/Actions/actions";
 // Exchange component for currency exchange functionality
 export default function Exchange() {
   // State variables for component
-  const [text1, setText1] = useState("");
-  const [text2, setText2] = useState(1);
+  const [exchangeValue1, setExchangeValue1] = useState("");
+  const [exchangeValue2, setExchangeValue2] = useState(1);
   const [units, setUnits] = useState([]);
   const [value1, setValue1] = useState(1);
   const [value2, setValue2] = useState(1);
@@ -29,9 +29,9 @@ export default function Exchange() {
     const unit = Object.values(coin).find((unit) => unit?.value === value2);
     setUnits(unit?.unit);
     let result = (value2 / value1) * text1;
-    setText2(result);
+    setExchangeValue2(result);
   };
-
+  
   // JSX for the Exchange component
   return (
     <div className="bg-white bg-opacity-10 px-4 py-4 backdrop-blur-md rounded-lg border border-gray-100 mr-3 shadow-lg items-center">
@@ -77,14 +77,14 @@ export default function Exchange() {
               <input
                 type="number"
                 placeholder="1"
-                value={text1}
+                value={exchangeValue1}
                 className="appearance-none block w-full bg-gray-100 bg-opacity-20 backdrop-blur-md text-gray-700 leading-tight focus:outline-none focus:border-gray-500 rounded border border-gray-400 px-3 py-1 outline-none"
-                onChange={(e) => setText1(e.target.value)}
+                onChange={(e) => setExchangeValue1(e.target.value)}
               />
             </div>
             {/* Result display */}
             <p className="mt-4 text-green-500 text-sm text-transform:capitalize">
-              {parseFloat(text2).toFixed(2) || parseFloat(text1).toFixed(1)} {units}
+              {parseFloat(exchangeValue2).toFixed(2) || parseFloat(exchangeValue1).toFixed(1)} {units}
             </p>
           </div>
         </div>
