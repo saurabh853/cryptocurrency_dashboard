@@ -52,6 +52,7 @@ const Portfolio = () => {
 
         // Extract data from API response
         responseData.forEach((element) => {
+          console.log(element.market_cap)
           dataValues.push(element.market_cap);
           labels.push(element.name);
         });
@@ -61,7 +62,6 @@ const Portfolio = () => {
           labels: labels,
           datasets: [
             {
-              label: dataValues,
               data: dataValues,
               backgroundColor: ['#0077b6', '#ef476f', '#00afb9'],
               borderColor: ['white'],
