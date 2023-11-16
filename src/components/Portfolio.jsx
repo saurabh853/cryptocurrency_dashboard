@@ -63,7 +63,7 @@ const Portfolio = () => {
           datasets: [
             {
               data: dataValues,
-              backgroundColor: ['#0077b6', '#ef476f', '#00afb9'],
+              backgroundColor: ['#6c00b6', '#6d47ef', '#ef47bd'],
               borderColor: ['white'],
               borderWidth: 0,
             },

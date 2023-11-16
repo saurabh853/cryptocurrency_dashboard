@@ -116,8 +116,8 @@ export default function Charts() {
                   {
                     spanGaps: true,
                     id: 1,
-                    borderColor: '#183bca',
-                    backgroundColor: '#183bca',
+                    borderColor: '#ca1818',
+                    backgroundColor: '#ca1818',
                     pointBorderColor: 'transparent',
                     pointBorderWidth: 3,
                     pointRadius: 3,
@@ -206,8 +206,8 @@ export default function Charts() {
                   {
                     label: `${id} in ${currency}`,
                     data: ChartData.map((element) => element.y),
-                    borderColor: '#F9A890',
-                    backgroundColor: '#F9A890',
+                    borderColor: '#96f990',
+                    backgroundColor: '#96f990',
                   },
                 ],
               }}
