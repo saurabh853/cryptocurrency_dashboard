@@ -6,7 +6,7 @@ import { fetchCoinExchangeRateList } from "../Redux/Actions/actions";
 export default function Exchange() {
   // State variables for component
   const [text1, setText1] = useState("");
-  const [text2, setText2] = useState(1);
+  const [text2, setText2] = useState("");
   const [units, setUnits] = useState([]);
   const [value1, setValue1] = useState(1);
   const [value2, setValue2] = useState(1);
