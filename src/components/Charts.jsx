@@ -15,14 +15,13 @@ export default function Charts() {
   // State variables to manage chart settings and data
   const [days, setDays] = useState(2);
   const [id, setId] = useState('bitcoin');
-  const [interval, setInterval] = useState([]);
   const [chartData, setChartData] = useState([]);
   const [chartType, setChartType] = useState('Line Chart');
 
   // Fetch chart data from the Coingecko API based on selected parameters
   useEffect(() => {
     fetch(
-      `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=${currency}&days=${days}&interval=${interval}`
+      `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=${currency}&days=${days}`
     )
       .then((response) => response.json())
       .then((data) => setChartData(data.prices));
@@ -38,7 +37,6 @@ export default function Charts() {
 
   // Function to update chart attributes based on user input
   const setChartAttributes = (newInterval, newDays) => {
-    setInterval(() => newInterval);
     setDays(() => newDays);
   };
 
