@@ -31,7 +31,7 @@ export default function Exchange() {
     let result = (value2 / value1) * text1;
     setExchangeValue2(result);
   };
-console.log(parseFloat(exchangeValue2).toFixed(2) || parseFloat(exchangeValue1).toFixed(1))
+console.log('here',parseFloat(exchangeValue2).toFixed(2) || parseFloat(exchangeValue1).toFixed(1))
   // JSX for the Exchange component
   return (
     <div className="bg-white bg-opacity-10 px-4 py-4 backdrop-blur-md rounded-lg border border-gray-100 mr-3 shadow-lg items-center">
@@ -85,7 +85,7 @@ console.log(parseFloat(exchangeValue2).toFixed(2) || parseFloat(exchangeValue1).
             {/* Result display */}
             <p className="mt-4 text-green-500 text-sm text-transform:capitalize">
 
-              {console.log(parseFloat(exchangeValue2).toFixed(2) || parseFloat(exchangeValue1).toFixed(1))}
+              {console.log('here',parseFloat(exchangeValue2).toFixed(2) || parseFloat(exchangeValue1).toFixed(1))}
               {parseFloat(exchangeValue2).toFixed(2) || parseFloat(exchangeValue1).toFixed(1)} {units}
             </p>
           </div>
