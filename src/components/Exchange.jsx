@@ -18,11 +18,12 @@ export default function Exchange() {
 
   // Fetch coin list on component mount
   useEffect(() => {
-    if (exchangeData.cryptoCoinList.rates.length === 0) {
+    if (exchangeData.cryptoCoinList.length === 0) {
       dispatchData(fetchCoinExchangeRateList());
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); 
+  }, []);
+
 
   // Handle currency exchange calculation
   const handleExchange = () => {
