@@ -84,6 +84,8 @@ export default function Exchange() {
             </div>
             {/* Result display */}
             <p className="mt-4 text-green-500 text-sm text-transform:capitalize">
+
+              {console.log(parseFloat(exchangeValue2).toFixed(2) || parseFloat(exchangeValue1).toFixed(1))}
               {parseFloat(exchangeValue2).toFixed(2) || parseFloat(exchangeValue1).toFixed(1)} {units}
             </p>
           </div>
