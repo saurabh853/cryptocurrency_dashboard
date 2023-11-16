@@ -72,7 +72,7 @@ const Portfolio = () => {
         // Calculate and set total volume
         setTotalVolume(dataSet1.reduce((partialSum, value) => partialSum + value, 0).toFixed(0));
       } catch (error) {
-        console.error('Error fetching data:', error);
+        // console.error('Error fetching data:', error);
       }
     };
 
