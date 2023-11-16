@@ -275,8 +275,8 @@ export default function Charts() {
                   {
                     label: `${id} in ${currency}`,
                     data: ChartData.map((element) => element.y),
-                    borderColor: '#EB90F9',
-                    backgroundColor: '#EB90F9',
+                    borderColor: '#2a1c53',
+                    backgroundColor: '#2a1c53',
                   },
                 ],
               }}
