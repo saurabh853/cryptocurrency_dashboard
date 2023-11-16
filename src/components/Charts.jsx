@@ -284,7 +284,7 @@ export default function Charts() {
                 indexAxis: 'y',
                 elements: {
                   bar: {
-                    borderWidth: 2,
+                    borderWidth:3 ,
                   },
                 },
                 responsive: true,
