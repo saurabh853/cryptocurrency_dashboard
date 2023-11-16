@@ -5,8 +5,8 @@ import { fetchCoinExchangeRateList } from "../Redux/Actions/actions";
 // Exchange component for currency exchange functionality
 export default function Exchange() {
   // State variables for component
-  const [exchangeValue1, setExchangeValue1] = useState(0);
-  const [exchangeValue2, setExchangeValue2] = useState(0);
+  const [exchangeValue1, setExchangeValue1] = useState("");
+  const [exchangeValue2, setExchangeValue2] = useState(1);
   const [units, setUnits] = useState([]);
   const [value1, setValue1] = useState(1);
   const [value2, setValue2] = useState(1);
@@ -84,8 +84,6 @@ console.log('here',parseFloat(exchangeValue2).toFixed(2) || parseFloat(exchangeV
             </div>
             {/* Result display */}
             <p className="mt-4 text-green-500 text-sm text-transform:capitalize">
-
-              {console.log('here',parseFloat(exchangeValue2).toFixed(2) || parseFloat(exchangeValue1).toFixed(1))}
               {parseFloat(exchangeValue2).toFixed(2) || parseFloat(exchangeValue1).toFixed(1)} {units}
             </p>
           </div>
