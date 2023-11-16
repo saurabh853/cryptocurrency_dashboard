@@ -5,7 +5,7 @@ import { fetchCoinExchangeRateList } from "../Redux/Actions/actions";
 // Exchange component for currency exchange functionality
 export default function Exchange() {
   // State variables for component
-  const [exchangeValue1, setExchangeValue1] = useState("");
+  const [exchangeValue1, setExchangeValue1] = useState(0);
   const [exchangeValue2, setExchangeValue2] = useState(0);
   const [units, setUnits] = useState([]);
   const [value1, setValue1] = useState(1);
@@ -79,6 +79,7 @@ export default function Exchange() {
                 type="number"
                 placeholder="1"
                 value={exchangeValue1}
+                min="0"
                 className="appearance-none block w-full bg-gray-100 bg-opacity-20 backdrop-blur-md text-gray-700 leading-tight focus:outline-none focus:border-gray-500 rounded border border-gray-400 px-3 py-1 outline-none"
                 onChange={(e) => setExchangeValue1(e.target.value)}
               />
