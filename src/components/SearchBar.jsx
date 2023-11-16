@@ -14,8 +14,8 @@ export default function SearchBar() {
     const handleCurrencyChange = (event) => {
         event.preventDefault();
         const selectedCurrency = currencyInputRef.current.value;
+        console.log(selectedCurrency)
         setCurrency(selectedCurrency);
-        currencyInputRef.current.value = "";
     };
 
     // Debounced function for search input
