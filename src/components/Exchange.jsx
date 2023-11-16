@@ -6,7 +6,7 @@ import { fetchCoinExchangeRateList } from "../Redux/Actions/actions";
 export default function Exchange() {
   // State variables for component
   const [exchangeValue1, setExchangeValue1] = useState("");
-  const [exchangeValue2, setExchangeValue2] = useState(1);
+  const [exchangeValue2, setExchangeValue2] = useState(0);
   const [units, setUnits] = useState([]);
   const [value1, setValue1] = useState(1);
   const [value2, setValue2] = useState(1);
@@ -18,17 +18,17 @@ export default function Exchange() {
 
   // Fetch coin list on component mount
   useEffect(() => {
-    if (exchangeData.cryptoCoinList.length === 0) {
+    if (exchangeData.cryptoCoinList.rates.length === 0) {
       dispatchData(fetchCoinExchangeRateList());
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, []); 
 
   // Handle currency exchange calculation
   const handleExchange = () => {
     const unit = Object.values(coin).find((unit) => unit?.value === value2);
     setUnits(unit?.unit);
-    let result = (value2 / value1) * text1;
+    let result = (value2 / value1) * parseFloat(exchangeValue1); // Fix here, change text1 to exchangeValue1
     setExchangeValue2(result);
   };
   
