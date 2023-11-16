@@ -20,7 +20,7 @@ Welcome to the Cryptocurrency Dashboard! This dashboard provides real-time infor
 
 ## Deployment
 
-Click on the link to visit Cryptocurrency Dashboard link [https://github.com/saurabh853/cryptourrency_dashboard.git](https://github.com/saurabh853/cryptourrency_dashboard/blob/main/README.md)
+Click on the link to visit Cryptocurrency Dashboard link (`https://cryptourrency-dashboard.vercel.app/`)
 
 
 ## Getting Started
