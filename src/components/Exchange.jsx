@@ -28,7 +28,7 @@ export default function Exchange() {
   const handleExchange = () => {
     const unit = Object.values(coin).find((unit) => unit?.value === value2);
     setUnits(unit?.unit);
-    let result = (value2 / value1) * parseFloat(exchangeValue1); // Fix here, change text1 to exchangeValue1
+    let result = (value2 / value1) * parseFloat(exchangeValue1); 
     setExchangeValue2(result);
   };
   
