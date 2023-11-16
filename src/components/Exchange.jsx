@@ -7,9 +7,9 @@ export default function Exchange() {
   // State variables for component
   const [exchangeValue1, setExchangeValue1] = useState(0);
   const [exchangeValue2, setExchangeValue2] = useState(0);
-  const [units, setUnits] = useState([]);
-  const [value1, setValue1] = useState(1);
-  const [value2, setValue2] = useState(1);
+  const [coinUnits, setCoinUnits] = useState("BTC");
+  const [sellCoin, setSellCoin] = useState(1);
+  const [buyCoin, setBuyCoin] = useState(1);
 
   // Redux hooks for dispatch and selecting state
   const dispatchData = useDispatch();
@@ -27,10 +27,9 @@ export default function Exchange() {
 
   // Handle currency exchange calculation
   const handleExchange = () => {
-    const unit = Object.values(coin).find((unit) => unit?.value === value2);
-    console.log(unit)
-    setUnits(unit?.unit);
-    let result = (value2 / value1) * parseFloat(exchangeValue1); 
+    const unit = Object.values(coin).find((unit) => parseInt(unit?.value) === parseInt(buyCoin));
+    setCoinUnits(unit?.unit);
+    let result = (buyCoin / sellCoin) * parseFloat(exchangeValue1); 
     setExchangeValue2(result);
   };
   
@@ -45,7 +44,7 @@ export default function Exchange() {
             <p className="text-orange-400 font-semibold mr-3">Sell</p>
             <select
               className="w-[130px] h-[2rem] bg-gray-100 rounded-lg font-semibold p-1 bg-opacity-60 backdrop-blur-md focus:ring-2 px-5 inline-flex cursor-pointer"
-              onChange={(e) => setValue1(e.target.value)}
+              onChange={(e) => setSellCoin(e.target.value)}
             >
               {coin &&
                 Object.values(coin).map((h, index) => (
@@ -60,7 +59,7 @@ export default function Exchange() {
             <p className="text-green-600 font-semibold mr-3">Buy</p>
             <select
               className="w-[130px] h-[2rem] bg-gray-100 rounded-lg font-semibold p-1 bg-opacity-60 backdrop-blur-md focus:ring-2 px-5 inline-flex cursor-pointer"
-              onChange={(e) => setValue2(e.target.value)}
+              onChange={(e) => setBuyCoin(e.target.value)}
             >
               {coin &&
                 Object.values(coin).map((h, index) => (
@@ -87,7 +86,7 @@ export default function Exchange() {
             </div>
             {/* Result display */}
             <p className="mt-4 text-green-500 text-sm text-transform:capitalize">
-              {parseFloat(exchangeValue2).toFixed(2) || parseFloat(exchangeValue1).toFixed(1)} {units}
+              {parseFloat(exchangeValue2).toFixed(2) || parseFloat(exchangeValue1).toFixed(1)} {coinUnits}
             </p>
           </div>
         </div>

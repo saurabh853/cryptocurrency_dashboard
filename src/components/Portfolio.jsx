@@ -4,7 +4,7 @@ import { Chart, registerables } from 'chart.js';
 
 Chart.register(...registerables);
 
-const options = {
+const chartOptions = {
   responsive: true,
   plugins: {
     legend: {
@@ -23,8 +23,8 @@ const options = {
 
 const Portfolio = () => {
   // State for total volume and chart data
-  const [totalVolume, setTotalVolume] = useState('');
-  const [data, setData] = useState({
+  const [totalValue, setTotalValue] = useState('');
+  const [chartData, setChartData] = useState({
     labels: ['Red', 'Green', 'Blue'],
     datasets: [
       {
@@ -44,24 +44,25 @@ const Portfolio = () => {
         const apiUrl =
           'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=tether%2Cethereum%2Cbitcoin&order=market_cap_desc';
 
-        const labelSet = [];
-        const dataSet1 = [];
+        const labels = [];
+        const dataValues = [];
 
         const response = await fetch(apiUrl);
         const responseData = await response.json();
 
-        for (const element of responseData) {
-          dataSet1.push(element.market_cap);
-          labelSet.push(element.name);
-        }
+        // Extract data from API response
+        responseData.forEach((element) => {
+          dataValues.push(element.market_cap);
+          labels.push(element.name);
+        });
 
         // Update state with fetched data
-        setData({
-          labels: labelSet,
+        setChartData({
+          labels: labels,
           datasets: [
             {
-              label: dataSet1,
-              data: dataSet1,
+              label: dataValues,
+              data: dataValues,
               backgroundColor: ['#0077b6', '#ef476f', '#00afb9'],
               borderColor: ['white'],
               borderWidth: 0,
@@ -69,10 +70,10 @@ const Portfolio = () => {
           ],
         });
 
-        // Calculate and set total volume
-        setTotalVolume(dataSet1.reduce((partialSum, value) => partialSum + value, 0).toFixed(0));
+        // Calculate and set total value
+        setTotalValue(dataValues.reduce((partialSum, value) => partialSum + value, 0).toFixed(0));
       } catch (error) {
-        // console.error('Error fetching data:', error);
+        console.error('Error fetching data:', error);
       }
     };
 
@@ -90,12 +91,12 @@ const Portfolio = () => {
           {new Intl.NumberFormat('en-IN', {
             style: 'currency',
             currency: 'usd',
-          }).format(totalVolume)}
+          }).format(totalValue)}
         </span>
       </div>
       <div className="xl:w-[240px] xl:-h[180px] md:w-[240px] xl:ml-[100px] md:ml-[170px] h-[230px] -mt-[15px]">
         {/* Render Pie chart with data and options */}
-        <Pie data={data} options={options} />
+        <Pie data={chartData} options={chartOptions} />
       </div>
       <div className="mt-5"></div>
     </div>
