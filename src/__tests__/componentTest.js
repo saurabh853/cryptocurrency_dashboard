@@ -12,13 +12,13 @@ it('renders without crashing', () => {
 
 //Default Selection
 it('should correctly set default option', () => {
-    render(<SideBar/>)
+    render(<SideBar/>);
     expect(screen.getByRole('option', { name: 'sortby' }).selected).toBe(true)
   })
 
 //correct number of options
 it('should display the correct number of options', () => {
-    render(<SideBar/>)
+    render(<SideBar/>);
     expect(screen.getAllByRole('option').length).toBe(9);
 })
 
@@ -29,5 +29,5 @@ it('should render SideBar Component', () => {
     expect(SideBarElement).toHaveTextContent('Cryptocurrency By Market Cap');
 
     const SortingOptionsElement = screen.getByRole("combobox");
-    expect(SortingOptionsElement).toBeInTheDocument(); 
+    expect(SortingOptionsElement).toBeInTheDocument();
 })
