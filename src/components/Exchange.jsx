@@ -28,6 +28,7 @@ export default function Exchange() {
   // Handle currency exchange calculation
   const handleExchange = () => {
     const unit = Object.values(coin).find((unit) => unit?.value === value2);
+    console.log(unit)
     setUnits(unit?.unit);
     let result = (value2 / value1) * parseFloat(exchangeValue1); 
     setExchangeValue2(result);
