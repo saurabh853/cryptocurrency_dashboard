@@ -20,7 +20,7 @@ Welcome to the Cryptocurrency Dashboard! This dashboard provides real-time infor
 
 ## Deployment
 
-Click on the link to visit Cryptocurrency Dashboard link (`https://cryptourrency-dashboard.vercel.app/`)
+Click on the link to visit Cryptocurrency Dashboard link https://cryptourrency-dashboard.vercel.app/
 
 
 ## Getting Started
@@ -28,7 +28,7 @@ Click on the link to visit Cryptocurrency Dashboard link (`https://cryptourrency
 1. **Installation:**
    - Clone the repository to your local machine.
    ```bash
-   git clone https://github.com/saurabh853/cryptourrency_dashboard.git
+   git clone https://github.com/saurabh853/cryptocurrency_dashboard
    ```
 
 2. **Dependencies:**
