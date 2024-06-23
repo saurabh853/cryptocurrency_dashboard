@@ -7,7 +7,7 @@ export default function Navbar() {
     // Container div with styling for positioning and spacing
     <div className='w-40 ml-5 mb-2 mt-2'>
       {/* Logo image with alt text for accessibility */}
-      <img src={logo} alt="logo" />
+      <img src={logo} alt="logo" className='navlogo' />
     </div>
   );
 }
