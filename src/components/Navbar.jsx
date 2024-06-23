@@ -2,7 +2,6 @@ import React from 'react';
 import logo from '../images/Logo.png';
 
 // Navbar component representing the website's navigation bar
-// Displays a logo image
 export default function Navbar() {
   return (
     // Container div with styling for positioning and spacing

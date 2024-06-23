@@ -28,7 +28,7 @@ Click on the link to visit Cryptocurrency Dashboard link https://cryptourrency-d
 1. **Installation:**
    - Clone the repository to your local machine.
    ```bash
-   git clone https://github.com/saurabh853/cryptourrency_dashboard.git
+   git clone https://github.com/saurabh853/cryptocurrency_dashboard
    ```
 
 2. **Dependencies:**
